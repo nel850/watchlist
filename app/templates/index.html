@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+     {% block content %}
+     {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>About</title>
+    {% endif %}
+       {% import 'macros.html' as macro %}
+<!-- popular movie section -->
+ <h3>popular movies</h3>
+<ul>
+
+     <li>{{macro.displayMovieList(popular)}}</li>
+
+    </ul>
+     <!-- upcoming movie section -->
+<h3>upcoming movies</h3>
+    <ul>
+    <li>{{macro.displayMovieList(upcoming)}}</li>
+    </ul>
+<!--now showing movies-->
+<h3>now showing movies</h3>
+  <ul>
+    <li>{{macro.displayMovieList(now_showing)}}</li>
+
+
+</ul>
+{% endblock %}
